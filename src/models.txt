@@ -1,0 +1,31 @@
+User{
+    nombre,
+    edad,
+    gmail,
+    contraseña,
+    fevoritos "onte to many"
+}
+
+Favoritos{
+    id,
+    usuario_id "many to one",
+    personajes : [personajes_id] "many to many",
+    planetas: [planetas_id] "many to many"
+}
+
+Personajes{
+    id,
+    nombre,
+    edad,
+    apariciones en pelis,
+    descripcion
+}
+
+Planetas{
+    id,
+    nombre,
+    galaxia,
+    sistema solar,
+    civilizaciones,
+    descripcion
+}

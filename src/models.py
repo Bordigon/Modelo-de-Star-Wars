@@ -1,6 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import String, Boolean
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy import String, Boolean, ForeignKey, Table, Column
+from sqlalchemy.orm import Mapped, mapped_column, relationship, session
+from typing import List
 
 db = SQLAlchemy()
 
@@ -15,5 +16,6 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
+            "active":self.is_active
             # do not serialize the password, its a security breach
         }
