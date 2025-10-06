@@ -9,8 +9,8 @@ User{
 Favoritos{
     id,
     usuario_id "many to one",
-    personajes : [personajes_id] "many to many",
-    planetas: [planetas_id] "many to many"
+    personajes : [personajes_id] "one to many",
+    planetas: [planetas_id] "one to many"
 }
 
 Personajes{
